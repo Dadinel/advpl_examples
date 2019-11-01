@@ -2,7 +2,7 @@
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} DnlXmlSerialize
-Classe gen√©rica para converter os atributos em xml
+Classe genÈrica para converter os atributos em xml
 
 @author Daniel Mendes
 @since 25/09/2019
@@ -37,9 +37,9 @@ return cXml
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} getPropriedades
-M√©todo auxiliar ao toXml que converte as propriedades em xml
+MÈtodo auxiliar ao toXml que converte as propriedades em xml
 
-@param oObjeto Objeto que ser√° convertido
+@param oObjeto Objeto que ser· convertido
 
 @return cXML XML das propriedades do objeto recebido
 
@@ -73,11 +73,11 @@ return cXml
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} getPropriedades
-M√©todo auxiliar ao toXml que converte uma propriedade do tipo array
+MÈtodo auxiliar ao toXml que converte uma propriedade do tipo array
 
-@param aArray Array que ser√° convertido
+@param aArray Array que ser· convertido
 
-@return cValor XML das posi√ß√µes do array recebido
+@return cValor XML das posiÁıes do array recebido
 
 @author Daniel Mendes
 @since 25/09/2019
@@ -100,9 +100,9 @@ return cValor
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} getValor
-M√©todo auxiliar ao toXml que converte o valor da propriedade em string
+MÈtodo auxiliar ao toXml que converte o valor da propriedade em string
 
-@param xValue Valor que ser√° convertido
+@param xValue Valor que ser· convertido
 
 @return cValor XML do valor recebido
 
@@ -168,7 +168,7 @@ endclass
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} new
-M√©todo construtor da classe
+MÈtodo construtor da classe
 
 @author Daniel Mendes
 @since 25/09/2019
@@ -185,7 +185,7 @@ return self
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} destroy
-M√©todo destrutor da classe
+MÈtodo destrutor da classe
 
 @author Daniel Mendes
 @since 25/09/2019
@@ -260,7 +260,7 @@ return nil
 /*/{Protheus.doc} addInformacao
 Add da propriedade informacoes
 
-@param cInformacao Informa√ß√£o sobre a pessoa
+@param cInformacao InformaÁ„o sobre a pessoa
 
 @author Daniel Mendes
 @since 25/09/2019
@@ -288,7 +288,7 @@ return nil
 
 //-------------------------------------------------------------------
 /*/{Protheus.doc} dnlObjToXml
-Fun√ß√£o para teste da serializa√ß√£o de objetos para XML
+FunÁ„o para teste da serializaÁ„o de objetos para XML
 
 @author Daniel Mendes
 @since 25/09/2019

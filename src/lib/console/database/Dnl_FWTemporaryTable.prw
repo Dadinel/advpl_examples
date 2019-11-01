@@ -2,7 +2,7 @@
 
 //-----------------------------------------------------------------
 /*/{Protheus.doc} DnlTmpTbl
-Cria e efetua testes com as tabelas tempor√°rias, utilizando
+Cria e efetua testes com as tabelas tempor·rias, utilizando
 da classe FWTemporaryTable, da LIB do Protheus
 
 @sample U_DnlTmpTbl()
@@ -23,7 +23,7 @@ local cAreaQuery as char
 local cQuerySQL as char
 
 //--------------------------------------------------------------------------
-//Esse bloco efetua a conex√£o com o DBAccess caso a mesma ainda n√£o exista
+//Esse bloco efetua a conex„o com o DBAccess caso a mesma ainda n„o exista
 //--------------------------------------------------------------------------
 if TCIsConnected()
     nConnect := TCGetConn()
@@ -34,17 +34,17 @@ else
 endif
 
 //-------------------------------------------------------------------------------------------
-//S√≥ podemos continuar com a gera√ß√£o da tabela tempor√°ria caso exista conex√£o com o DBAccess
+//SÛ podemos continuar com a geraÁ„o da tabela tempor·ria caso exista conex„o com o DBAccess
 //-------------------------------------------------------------------------------------------
 if nConnect >= 0
     //--------------------------------------------------------------------
-    //O primeiro par√¢metro de alias, possui valor default
-    //O segundo par√¢metro de campos, pode ser atribuido ap√≥s o construtor
+    //O primeiro par‚metro de alias, possui valor default
+    //O segundo par‚metro de campos, pode ser atribuido apÛs o construtor
     //--------------------------------------------------------------------
     oTable := FWTemporaryTable():New( /*cAlias*/, /*aFields*/)
 
     //----------------------------------------------------
-    //O array de campos segue o mesmo padr√£o do DBCreate:
+    //O array de campos segue o mesmo padr„o do DBCreate:
     //1 - C - Nome do campo
     //2 - C - Tipo do campo
     //3 - N - Tamanho do campo
@@ -61,29 +61,29 @@ if nConnect >= 0
     oTable:SetFields(aFields)
 
     //---------------------
-    //Cria√ß√£o dos √≠ndices
+    //CriaÁ„o dos Ìndices
     //---------------------
     oTable:AddIndex("01", {"C_ID"} )
     oTable:AddIndex("02", {"N_COD"} )
     oTable:AddIndex("03", {"N_COD", "C_NAME"} )
 
     //---------------------------------------------------------------
-    //Pronto, agora temos a tabela criado no espa√ßo tempor√°rio do DB
+    //Pronto, agora temos a tabela criado no espaÁo tempor·rio do DB
     //---------------------------------------------------------------
     oTable:Create()
 
     //------------------------------------
-    //Pego o alias da tabela tempor√°ria
+    //Pego o alias da tabela tempor·ria
     //------------------------------------
     cAlias := oTable:GetAlias()
 
     //--------------------------------------------------------
-    //Pego o nome real da tabela tempor√°ria no banco de dados
+    //Pego o nome real da tabela tempor·ria no banco de dados
     //--------------------------------------------------------
     cTableName := oTable:GetRealName()
 
     //------------------------------
-    //Inser√ß√£o de dados para testes
+    //InserÁ„o de dados para testes
     //------------------------------
     (cAlias)->(DBAppend())
     (cAlias)->C_ID := FWUUIDv4()
@@ -94,7 +94,7 @@ if nConnect >= 0
     (cAlias)->(DBCommit())
 
     //-------------------------------------------------------------------------
-    //Inser√ß√£o de dados via INSERT, vamos usar o nome real da tabela para isso
+    //InserÁ„o de dados via INSERT, vamos usar o nome real da tabela para isso
     //-------------------------------------------------------------------------
     cQuerySQL := ""
     cQuerySQL += "INSERT INTO " + cTableName + " (C_ID, N_COD, C_NAME, D_DATE, C_OBS) VALUES "
@@ -118,7 +118,7 @@ if nConnect >= 0
     cAreaQuery := GetNextAlias()
 
     //--------------------------------------------------------------------
-    //√â v√°lido lembrar que a data √© gravada como string no banco de dados
+    //… v·lido lembrar que a data È gravada como string no banco de dados
     //--------------------------------------------------------------------
     cQuerySQL := "SELECT C_ID, N_COD, C_NAME, D_DATE, C_OBS FROM " + cTableName
 
@@ -130,21 +130,21 @@ if nConnect >= 0
     enddo
 
     //-----------------------------------------------------------
-    //Sempre fecho a workarea ap√≥s utilizar do retorno da query
+    //Sempre fecho a workarea apÛs utilizar do retorno da query
     //-----------------------------------------------------------
     (cAreaQuery)->(DBCloseArea())
 
     //-------------------------------------------------------------------
-    //Fecho e apago a tabela tempor√°ria
-    //Por mais que a tabela tempor√°ria seja exclu√≠da de forma autom√°tica,
-    //√© sempre uma boa pr√°tica fechar e excluir a mesma
+    //Fecho e apago a tabela tempor·ria
+    //Por mais que a tabela tempor·ria seja excluÌ≠da de forma autom·tica,
+    //… sempre uma boa pr·tica fechar e excluir a mesma
     //-------------------------------------------------------------------
     oTable:Delete()
-	FWFreeVar(@oTable) //Limpa o objeto da mem√≥ria
+	FWFreeVar(@oTable) //Limpa o objeto da memÛria
 endif
 
 //--------------------------------------
-//Fecha a conex√£o criada para os testes
+//Fecha a conex„o criada para os testes
 //--------------------------------------
 if lCloseConnect
     TCUnLink()
