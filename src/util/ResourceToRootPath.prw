@@ -1,6 +1,6 @@
 #include "protheus.ch"
 
-//Nome da pasta onde ser√£o salvos os resources do RPO
+//Nome da pasta onde ser„o salvos os resources do RPO
 #define C_PATH_SAVE "\resources\"
 
 //-------------------------------------------------------------------
@@ -11,7 +11,7 @@ Salva "todos" os resources do RPO em uma pasta
 @sample u_ResToRoot()
 @since 18/05/2020
 @version 1.0
-@obs Os resources .tres s√£o ignorados
+@obs Os resources .tres s„o ignorados
 /*/
 //-------------------------------------------------------------------
 function u_ResToRoot()
