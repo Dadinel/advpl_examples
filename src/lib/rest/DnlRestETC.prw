@@ -238,6 +238,8 @@ Efetua a criação da tabela de JSON no DB (SQLite)
 static function initSQLite()
 
 if __lSqlOk == nil
+    __lSqlOk := .T.
+
     if !existTable()
         createTable()
     endif
