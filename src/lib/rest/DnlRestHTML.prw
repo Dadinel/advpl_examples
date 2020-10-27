@@ -13,6 +13,7 @@ API que retorna uma página HTML
 wsrestful DnlRestHTML description "REST para retorna de um HTML =]"
 
 wsmethod get description "Retorna um página HTML" wssyntax "dnlresthtml/v1" path "dnlresthtml/v1" produces TEXT_HTML
+wsmethod get redirect description "Retorna um página HTML via redirect" wssyntax "dnlresthtml/v2" path "dnlresthtml/v2"
 
 end wsrestful
 
@@ -190,4 +191,18 @@ endcontent
 self:setResponse(cHTML)
 self:setStatus(200)
 
+return .T.
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} get
+Método GET, retorna uma página HTML
+
+@author Daniel Mendes
+@since 22/10/2020
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+wsmethod get redirect wsservice DnlRestHTML
+self:setStatus(301)
+self:setHeader("Location", "https://devforum.totvs.com.br")
 return .T.
