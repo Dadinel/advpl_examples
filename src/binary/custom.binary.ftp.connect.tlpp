@@ -76,7 +76,7 @@ Efetua a conexão com o servidor FTP
 @param cUser, character, usuário
 @param cPassword, character, senha
 
-@return lConnect, logical, Indica sucesso no login via AD
+@return lConnect, logical, Indica sucesso no login via FTP
 
 @author Daniel Mendes
 @since May 17, 2022
