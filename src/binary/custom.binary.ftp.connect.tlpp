@@ -1,0 +1,133 @@
+#include "protheus.ch"
+
+namespace custom.binary.ftp
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} connect
+Interface para conexão com FTP
+
+@return lConnect, logical, indica sucesso na conexão FTP
+
+@sample custom.binary.ftp.u_connect()
+
+@author Daniel Mendes
+@since May 03, 2024
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+user function connect() as logical
+local oDlg as object
+local cIP as character
+local cPort as character
+local cUser as character
+local cPassword as character
+local oGetIP as object
+local oGetPort as object
+local oGetUser as object
+local oGetPassword as object
+local oSayIP as object
+local oSayPort as object
+local oSayUser as object
+local oSayPassword as object
+local oConnect as object
+local lConnect as logical
+local oFTP as object
+
+lConnect := .F.
+
+oFTP := TFTPClient():New()
+
+oDlg = TDialog():New( 180, 180, 420, 390, "Conexão com FTP",,,.F.,,,,,,.T.,,,,, )
+
+cIP := Space(255)
+cPort := Space(255)
+cUser := Space(255)
+cPassword := Space(255)
+
+oSayIP := TSay():New(13,05, {||"IP:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetIP := TGet():New(20,05, {|x| If(Pcount()>0, cIP := x, cIP)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cIP,,,,)
+
+oSayPort := TSay():New(35,05, {||"Porta:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetPort := TGet():New(42,05, {|x| If(Pcount()>0, cPort := x, cPort)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cPort,,,,)
+
+oSayUser:= TSay():New(56,05, {||"Usuário:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetUser := TGet():New(63,05, {|x| If(Pcount()>0, cUser:= x, cUser)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cUser,,,,)
+
+oSayPassword:= TSay():New(77,05, {||"Senha:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetPassword := TGet():New(84,05, {|x| If(Pcount()>0, cPassword:= x, cPassword)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.T.,,cPassword,,,,)
+
+oConnect := TButton():New(103, 05, "Conectar",oDlg,{|| lConnect := connectFTP(oFTP, cIP, cPort, cUser, cPassword)},96,10,,,.F.,.T.,.F.,,.F.,,,.F. )
+
+oDlg:Activate(,,,.T.,,,,,)
+
+oFTP:Close()
+
+FreeObj(oFTP)
+
+return lConnect
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} connectFTP
+Efetua a conexão com o servidor FTP
+
+@param oFTP, object, Objeto de FTP client
+@param cPort, character, Porta de conexão
+@param cIP, character, domínio
+@param cUser, character, usuário
+@param cPassword, character, senha
+
+@return lConnect, logical, Indica sucesso no login via AD
+
+@author Daniel Mendes
+@since May 17, 2022
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+static function connectFTP(oFTP as object, cIP as character, cPort as character, cUser as character, cPassword as character) as logical
+local lConnect as logical
+local cMsg as character
+local xPort as variant
+local xUser as variant
+local xPassword as variant
+local nRet as numeric
+local cError as character
+local cBreakLine as character
+local cDir as character
+
+if !Empty(cPort)
+    xPort := Val(AllTrim(cPort))
+endif
+
+if !Empty(cUser)
+    xUser := Trim(cUser)
+endif
+
+if !Empty(cPassword)
+    xPassword := Trim(cPassword)
+endif
+
+nRet := oFTP:FTPConnect(AllTrim(cIP), xPort, xUser, xPassword)
+
+cBreakLine := Chr(13) + Chr(10)
+
+if nRet == 0
+    cDir := ""
+    
+    oFtp:GetCurDir(@cDir)
+
+    cMsg := "FTP conectado com sucesso:"
+    cMsg += cBreakLine + "GetCurDir:" + cDir
+    cMsg += cBreakLine + "GetType:" + cValToChar(oFTP:GetType())
+    cMsg += cBreakLine + "nTransferType:" + cValToChar(oFTP:nTransferType)
+    cMsg += cBreakLine + "nTransferMode:" + cValToChar(oFTP:nTransferMode)
+    cMsg += cBreakLine + "nTransferStruct:" + cValToChar(oFTP:nTransferStruct)
+    cMsg += cBreakLine + "nTransferStruct:" + cValToChar(oFTP:nTransferStruct)
+else
+    cError := oFTP:cErrorString
+    cError += Iif(Empty(cError), cValToChar(nRet), " | Code: " + cValToChar(nRet))
+    cMsg := "Não foi possível conectar no FTP: " + cBreakLine + cError
+endif
+
+MsgInfo(cMsg, "TOTVS")
+
+return lConnect

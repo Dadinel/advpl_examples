@@ -1,0 +1,88 @@
+#include "protheus.ch"
+
+namespace custom.binary.activedirectory
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} login
+Autenticação via AD
+
+@return lLogin, logical, Indica sucesso no login via AD
+
+@sample custom.binary.activedirectory.u_login()
+
+@author Daniel Mendes
+@since May 17, 2022
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+user function login() as logical
+local oDlg as object
+local cDomain as character
+local cUser as character
+local cPassword as character
+local oGetDomain as object
+local oGetUser as object
+local oGetPassword as object
+local oSayDomain as object
+local oSayUser as object
+local oSayPassword as object
+local oLogin as object
+local lLogin as logical
+
+cUser := ""
+cDomain := ""
+lLogin := .F.
+
+GetUserFromSID(GetCredential(), @cDomain, @cUser)
+
+oDlg = TDialog():New( 180, 180, 375, 390, "Login via AD",,,.F.,,,,,,.T.,,,,, )
+
+cDomain := Pad(cDomain, 255)
+cUser := Pad(cUser, 255)
+cPassword := Space(255)
+
+oSayDomain:= TSay():New(13,05, {||"Domínio:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetDomain := TGet():New(20,05, {|x| If(Pcount()>0, cDomain:= x, cDomain)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cDomain,,,,)
+
+oSayUser:= TSay():New(35,05, {||"Usuário:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetUser := TGet():New(42,05, {|x| If(Pcount()>0, cUser:= x, cUser)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,cUser,,,,)
+
+oSayPassword:= TSay():New(56,05, {||"Senha:"},oDlg,,,,,,.T.,CLR_BLACK,CLR_WHITE,200,7)
+oGetPassword := TGet():New(63,05, {|x| If(Pcount()>0, cPassword:= x, cPassword)},oDlg,096,009,"",,0,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.T.,,cPassword,,,,)
+
+oLogin := TButton():New(82, 05, "Login",oDlg,{|| lLogin := validADUsr(cDomain, cUser, cPassword)},96,10,,,.F.,.T.,.F.,,.F.,,,.F. )
+
+oDlg:Activate(,,,.T.,,,,,)
+
+return lLogin
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} validADUsr
+Executa a validação do usuário no AD via função ADUserValid
+
+@param cDomain, character, domínio
+@param cUser, character, usuário
+@param cPassword, character, senha
+
+@return lValid, logical, Indica sucesso no login via AD
+
+@author Daniel Mendes
+@since May 17, 2022
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+static function validADUsr(cDomain as character, cUser as character, cPassword as character) as logical
+local lValid as logical
+local cMsg as character
+
+lValid := ADUserValid(Trim(cDomain), Trim(cUser), Trim(cPassword))
+
+if lValid
+    cMsg := "Autenticação efetuada com sucesso"
+else
+    cMsg := "Não foi possível autenticar o usuário no AD"
+endif
+
+MsgInfo(cMsg, "TOTVS")
+
+return lValid
