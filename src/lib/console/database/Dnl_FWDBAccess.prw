@@ -6,7 +6,7 @@ Exemplo de utilização da classe FWDBAccess
 
 @sample U_DnlFWDBAccess()
 
-@author Daniel Mendes
+@author Dan M
 @since 27/10/2020
 @version 1.0
 /*/

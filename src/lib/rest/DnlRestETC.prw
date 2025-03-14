@@ -12,7 +12,7 @@ static __lSqlOk as logical
 /*/{Protheus.doc} DnlRestETC
 API para exemplificar o REST no Protheus
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -31,7 +31,7 @@ end wsrestful
 /*/{Protheus.doc} post
 Método POST, onde o JSON enviado é persistido no SQLite
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -45,7 +45,7 @@ return .T.
 /*/{Protheus.doc} get
 Método GET, onde o JSON é retornando após consulta no SQLite
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -68,7 +68,7 @@ return lRet
 /*/{Protheus.doc} put
 Método PUT, onde o JSON é atualizado no SQLite
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -91,7 +91,7 @@ return lRet
 /*/{Protheus.doc} delete
 Método DELETE, onde o JSON é excluído do SQLite
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -118,7 +118,7 @@ Indica se o ID pesquisado exist no DB
 
 @return Boolean, Indica se o ID pesquisado existe no DB
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -147,7 +147,7 @@ Efetua a inserção do JSON enviado no SQLite
 
 @return cUUID String de ID gerada na inserção no DB
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -170,7 +170,7 @@ Retorna o JSON presente no DB
 
 @return cJson String contendo o JSON
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -200,7 +200,7 @@ Atualiza o JSON presente no DB
 
 @return Boolean, Indica se a operação foi bem sucedida
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -217,7 +217,7 @@ Apaga o JSON presente no DB
 
 @return Boolean, Indica se a operação foi bem sucedida
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -230,7 +230,7 @@ return DBSqlExec("", "DELETE FROM " + C_TABLE_ETC_NAME + " WHERE ID_JSON = '" + 
 /*/{Protheus.doc} initSQLite
 Efetua a criação da tabela de JSON no DB (SQLite)
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -252,7 +252,7 @@ return nil
 Efetua a criação da tabela no SQLite
 
 @return Boolean, Indica se a criação ocorreu sem problemas
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/
@@ -266,7 +266,7 @@ Verifica se a tabela existe no DB
 
 @return lExist Indica se a tabela existe no SQLite
 
-@author Daniel Mendes
+@author Dan M
 @since 15/07/2019
 @version 1.0
 /*/

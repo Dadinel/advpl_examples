@@ -7,7 +7,7 @@
 /*/{Protheus.doc} u_ResToRoot
 Salva "todos" os resources do RPO em uma pasta
 
-@author Daniel Mendes
+@author Dan M
 @sample u_ResToRoot()
 @since 18/05/2020
 @version 1.0

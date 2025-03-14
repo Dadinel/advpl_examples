@@ -9,7 +9,7 @@
 Exemplo de INSERT INTO com a tabela temporária (FWTemporaryTable)
 
 @sample U_DNLInsTmp()
-@author Daniel Mendes
+@author Dan M
 @since 30/10/2019
 @version 1.0
 /*/

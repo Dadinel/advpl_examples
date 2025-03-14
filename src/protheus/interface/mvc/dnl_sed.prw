@@ -9,7 +9,7 @@ Função de cadastro de naturezas, alias SED
 
 @sample U_DNL_SED()
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/2019
 @version 1.0
 /*/
@@ -32,7 +32,7 @@ Retorna o browse da rotina
 
 @return oBrowse Objeto do tipo FWMBrowse(FWBrowse)
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/2019
 @version 1.0
 /*/
@@ -53,7 +53,7 @@ Todo o modelo é baseado nos dicionários, em principal SX2, SX3 e SIX
 
 @return oModel Objeto do tipo MPFormModel(FWFormModel)
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/2019
 @version 1.0
 /*/
@@ -75,7 +75,7 @@ Retorna a view para o cadastro de naturezas, alias SED
 
 @return oView Objeto do tipo FwFormView
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/2019
 @version 1.0
 /*/
@@ -102,7 +102,7 @@ Retorna o array com a opções presentes na rotina
 não são apresentadas diretamente como botões, é necessário ir nas
 outras ações
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/2019
 @version 1.0
 /*/

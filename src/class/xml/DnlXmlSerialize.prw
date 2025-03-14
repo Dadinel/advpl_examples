@@ -4,7 +4,7 @@
 /*/{Protheus.doc} DnlXmlSerialize
 Classe genérica para converter os atributos em xml
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -22,7 +22,7 @@ Converte a instancia da classe em xml
 
 @return cXML classe serializada em formato xml
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -43,7 +43,7 @@ Método auxiliar ao toXml que converte as propriedades em xml
 
 @return cXML XML das propriedades do objeto recebido
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -79,7 +79,7 @@ Método auxiliar ao toXml que converte uma propriedade do tipo array
 
 @return cValor XML das posições do array recebido
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -106,7 +106,7 @@ Método auxiliar ao toXml que converte o valor da propriedade em string
 
 @return cValor XML do valor recebido
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/

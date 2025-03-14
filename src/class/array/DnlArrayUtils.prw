@@ -4,7 +4,7 @@
 /*/{Protheus.doc} DnlArrayUtils
 Classe com métodos estáticos e úteis para manipulação de arrays
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -21,7 +21,7 @@ Insere um item no array na posição indicada
 @param xValue Valor que será inserido no array
 @param nPosition Posição que o valor será inserido
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/

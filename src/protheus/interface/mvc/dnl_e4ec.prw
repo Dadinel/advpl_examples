@@ -5,7 +5,7 @@
 /*/{Protheus.doc} DNL_E4EC
 Cadastro do alias SE4/SEC
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/19
 @version 1.0 
 /*/
@@ -28,7 +28,7 @@ Definições do browse
 
 @return oBrowse Objeto do tipo FWMBrowse(FWBrowse)
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/19
 @version 1.0 
 /*/
@@ -46,7 +46,7 @@ return oBrowse
 /*/{Protheus.doc} MenuDef
 Definição das opções de menu
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/19
 @version 1.0 
 /*/
@@ -71,7 +71,7 @@ Definição do modelo de dados
 
 @return oModel Objeto do tipo MPFormModel(FWFormModel)
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/19
 @version 1.0 
 /*/
@@ -99,7 +99,7 @@ Definição da interface
 
 @return oView Objeto do tipo FwFormView
 
-@author Daniel Mendes
+@author Dan M
 @since 19/06/19
 @version 1.0 
 /*/

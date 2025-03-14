@@ -5,7 +5,7 @@
 /*/{Protheus.doc} DnlRestHTML
 API que retorna uma página HTML
 
-@author Daniel Mendes
+@author Dan M
 @since 22/10/2020
 @version 1.0
 /*/
@@ -21,7 +21,7 @@ end wsrestful
 /*/{Protheus.doc} get
 Método GET, retorna uma página HTML
 
-@author Daniel Mendes
+@author Dan M
 @since 22/10/2020
 @version 1.0
 /*/
@@ -197,7 +197,7 @@ return .T.
 /*/{Protheus.doc} get
 Método GET, retorna uma página HTML
 
-@author Daniel Mendes
+@author Dan M
 @since 22/10/2020
 @version 1.0
 /*/

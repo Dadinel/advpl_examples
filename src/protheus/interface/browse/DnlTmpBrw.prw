@@ -10,7 +10,7 @@ Exemplo de browse com tabela temporária, SEM MENU!
 
 @sample U_DnlTmpBrw
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -45,7 +45,7 @@ Retorna a objeto da tabela temporária, já criada e com registros
 
 @return oTemp Objeto FWTemporaryTable
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -78,7 +78,7 @@ Retorna o browse da tabela temporária, já com o alias e colunas
 
 @return oBrowse Objeto FWMBrowse
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -103,7 +103,7 @@ Retorna as colunas do browse com base nos campos do alias informado
 
 @return aColumns Array de colunas do browse (FWBrwColumn)
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -133,7 +133,7 @@ Adiciona os índices na tabela temporária
 @param oTemp Objeto FWTemporaryTable da tabela temporária
 @param aIndex Array dos índices do alias que a tabela temporária é baseada
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -155,7 +155,7 @@ Retorna os índices do alias informado
 
 @return aIndex Array com os índice do alias informado, com a remoção da função DTOS e STR
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -181,11 +181,11 @@ return aIndex
 /*/{Protheus.doc} removeFunctions
 Remove da string as funções DTOS e STR, funções utilizada em índices
 
-@param cIndex Índice
+@param cIndex Ýndice
 
 @return Sting, índice limpo, sem a utilização de funções
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -203,7 +203,7 @@ Popula a tabela temporária com base no alias de origem
 
 @obs Em caso de erro uma exceção é gerada e o programa é encerrado
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/
@@ -231,7 +231,7 @@ Converte o array de campos (Nome) para uma string
 
 @return cString String de retorno da conversão do array
 
-@author Daniel Mendes
+@author Dan M
 @since 18/12/2019
 @version 1.0
 /*/

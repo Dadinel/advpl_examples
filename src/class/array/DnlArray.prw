@@ -4,7 +4,7 @@
 /*/{Protheus.doc} DnlArray
 Classe similar a um arraylist
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -31,7 +31,7 @@ endclass
 /*/{Protheus.doc} new
 Método construtor da classe
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -47,7 +47,7 @@ Adiciona um valor no final do array
 
 @param xValue Valor que será inserido no array
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -66,7 +66,7 @@ Adiciona um valor no array na posição indicada
 
 @return lRet Indica se a inserção foi efetuada
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -95,7 +95,7 @@ Remove um item do array conforme posição
 
 @return lRet Indica se a deleção foi efetuada
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -126,7 +126,7 @@ Remove um item do array conforme o valor enviado
 
 @obs O primeiro valor encontrado será removido
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -151,7 +151,7 @@ Retorna o tamanho do array
 
 @return Númerico - Tamanho do array
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -167,7 +167,7 @@ Retorna se o valor informado existe no array
 
 @return lExist Indica se o valor existe no array
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -191,7 +191,7 @@ Retorna a posição do valor informado
 
 @return nPos Posição que o valor foi encontrado
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -208,7 +208,7 @@ Função auxiliar que retorna a posição de um valor no array
 
 @return nPos Posição que o valor foi encontrado
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -233,7 +233,7 @@ Retorna o valor do array na posição indicada
 
 @obs Retorna nul em caso de posição inválida
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -255,7 +255,7 @@ Retorna uma cópia do array
 
 @obs Retorna uma cópia para evitar problemas de referência
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -267,7 +267,7 @@ return aClone(self:aArray)
 /*/{Protheus.doc} clear
 Efetua a limpeza do array
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/
@@ -281,7 +281,7 @@ return nil
 /*/{Protheus.doc} destroy
 Efetua a limpeza do array e o free da instância da classe
 
-@author Daniel Mendes
+@author Dan M
 @since 28/11/2019
 @version 1.0
 /*/

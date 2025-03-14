@@ -4,7 +4,7 @@
 /*/{Protheus.doc} dnlObjToXml
 Função para teste da serialização de objetos para XML
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/

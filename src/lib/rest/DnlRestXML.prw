@@ -5,7 +5,7 @@
 /*/{Protheus.doc} DnlRestXML
 Exemplo de REST trabalhando com XML
 
-@author Daniel Mendes
+@author Dan M
 @since 03/06/2020
 @version 1.0
 /*/
@@ -20,7 +20,7 @@ end wsrestful
 /*/{Protheus.doc} get
 Retorna um XML
 
-@author Daniel Mendes
+@author Dan M
 @since 03/06/2020
 @version 1.0
 /*/
@@ -44,7 +44,7 @@ return .T.
 /*/{Protheus.doc} post
 Recebe um XML
 
-@author Daniel Mendes
+@author Dan M
 @since 03/06/2020
 @version 1.0
 /*/
@@ -83,7 +83,7 @@ return lRet
 /*/{Protheus.doc} error
 Retorna um exceção
 
-@author Daniel Mendes
+@author Dan M
 @since 03/06/2020
 @version 1.0
 /*/

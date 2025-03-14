@@ -4,7 +4,7 @@
 /*/{Protheus.doc} DnlPessoa
 Classe simples para exemplificar uma pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -30,7 +30,7 @@ endclass
 /*/{Protheus.doc} new
 Método construtor da classe
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -47,7 +47,7 @@ return self
 /*/{Protheus.doc} destroy
 Método destrutor da classe
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -77,7 +77,7 @@ Set da propriedade nome
 
 @param cNome Nome da pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -92,7 +92,7 @@ Set da propriedade sobrenome
 
 @param cSobrenome Sobrenome da pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -107,7 +107,7 @@ Set da propriedade nascimento
 
 @param dNascimento Nascimento da pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -122,7 +122,7 @@ Add da propriedade informacoes
 
 @param cInformacao Informação sobre a pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/
@@ -137,7 +137,7 @@ Add da propriedade filho
 
 @param oFilho Filho da pessoa
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/

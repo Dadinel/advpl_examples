@@ -7,7 +7,7 @@ da classe FWTemporaryTable, da LIB do Protheus
 
 @sample U_DnlTmpTbl()
 
-@author Daniel Mendes
+@author Dan M
 @since 01/07/2019
 @version 1.0
 /*/

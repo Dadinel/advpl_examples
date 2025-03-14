@@ -11,7 +11,7 @@ Função de usuário, acessa o modelo e view que são criados somente em
 memória, essa função poderia e deveria estar em outro fonte para uma
 melhor organização! :D
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -64,7 +64,7 @@ Definição do modelo de dados
 
 @return oModel - Objeto do modelo de dados
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -85,7 +85,7 @@ Definição da estrutura do modelo
 
 @return oStruct - Objeto com a estrutura de dados
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -108,7 +108,7 @@ Definição da visualização de dados
 
 @return oView - Objeto para a visualização dos dados
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -131,7 +131,7 @@ Definição da estrutura de visualização de dados
 
 @return oStruct - Objeto com a estrutura da visualização dos dados
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -156,7 +156,7 @@ Validação de maiores de 18 anos
 
 @return Boolean - .T.
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -173,7 +173,7 @@ sempre retornando .T., pois não existe persistência
 
 @return Boolean - .T.
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -186,7 +186,7 @@ return .T.
 /*/{Protheus.doc} DnlMvcMemoryData
 Classe auxiliar com métodos estáticos para acessar os dados do modelo
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -202,7 +202,7 @@ Método para retornar o conteúdo atual do json
 
 @return __cJsonMemory - String contendo o JSON, podendo estar vazia ou nula
 
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/
@@ -214,7 +214,7 @@ return __cJsonMemory
 /*/{Protheus.doc} cleanJsonFromModelInMemory
 Método para limpar o conteúdo do json
 	
-@author Daniel Mendes
+@author Dan M
 @since 17/07/2020
 @version 1.0
 /*/

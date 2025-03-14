@@ -4,7 +4,7 @@
 /*/{Protheus.doc} DnlArrExp
 Função para teste da classe DnlArray, que simula um arraylist
 
-@author Daniel Mendes
+@author Dan M
 @since 25/09/2019
 @version 1.0
 /*/

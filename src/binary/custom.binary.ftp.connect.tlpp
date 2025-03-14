@@ -10,7 +10,7 @@ Interface para conexão com FTP
 
 @sample custom.binary.ftp.u_connect()
 
-@author Daniel Mendes
+@author Dan M
 @since May 03, 2024
 @version 1.0
 /*/
@@ -78,7 +78,7 @@ Efetua a conexão com o servidor FTP
 
 @return lConnect, logical, Indica sucesso no login via FTP
 
-@author Daniel Mendes
+@author Dan M
 @since May 17, 2022
 @version 1.0
 /*/

@@ -1,0 +1,80 @@
+#include "protheus.ch"
+
+namespace custom.binary.rpc
+
+//-------------------------------------------------------------------
+/*/{Protheus.doc} connect
+Função para teste de conexão RPC
+
+@sample custom.binary.rpc.u_connect()
+
+@author Dan M
+@since 13/03/2025
+@version 1.0
+/*/
+//-------------------------------------------------------------------
+user function connect()
+local cEnvironment as character
+local cIP as character
+local nPort as numeric
+local nTimeOut as numeric
+local lSSL as logical
+local oDialog as object
+local oEnvironment as object
+local oIP as object
+local oPort as object
+local oTimeOut as object
+local oSSL as object
+local oOk as object
+local oRpc as object
+local lFirst as logical
+
+lFirst := .T.
+cEnvironment := Pad(GetEnvServer(), 255)
+cIP := Pad(GetServerIp(), 255)
+nPort := 999999
+nTimeOut := 240
+lSSL := .F.
+
+while (lFirst .or. MsgNoYes("Deseja tentar conectar novamente"))
+    lFirst := .F.
+
+    oDialog := TDialog():New( 0, 0, 240, 210, "Teste de RPC",,,.F.,,,,,,.T.,,,,, )
+
+    oEnvironment := TGet():New(05,05,{|u|if(PCount()==0,cEnvironment,cEnvironment:=u)},oDialog,096,009,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,"cEnvironment",,,,,,,"Ambiente", 1)
+    oIP := TGet():New(25,05,{|u|if(PCount()==0,cIP,cIP:=u)},oDialog,096,009,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,"cIP",,,,,,,"IP", 1)
+    oPort := TGet():New(45,05,{|u|if(PCount()==0,nPort,nPort:=u)},oDialog,096,009,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,"nPort",,,,,,,"Porta", 1)
+    oTimeOut := TGet():New(65,05,{|u|if(PCount()==0,nTimeOut,nTimeOut:=u)},oDialog,096,009,,,,,,.F.,,.T.,,.F.,,.F.,.F.,,.F.,.F.,,"cIP",,,,,,,"Timeout", 1)
+    oSSL := TCheckBox():New(85,05,"Usar SSL?",{|u|if(PCount()==0,lSSL,lSSL:=u)},oDialog,100,210,,,,,,,,.T.,,,)
+
+    oOk := TButton():New(100, 35, "Ok",oDialog,{||oDialog:End()}, 40,10,,,.F.,.T.,.F.,,.F.,,,.F.)
+
+    oDialog:Activate()
+
+    if !Empty(cEnvironment) .and. !Empty(cIP) .and. !Empty(nPort)
+        oRpc := TRpc():New(cEnvironment)
+
+        if oRpc:Connect(cIP, nPort, nTimeOut, lSSL)
+            oRpc:CallProc("ConOut", "Conexao estabelecida no servidor destino via RPC")
+
+            if oRpc:CallProc("FindFunction", "Alias") .and. oRpc:CallProc("FindFunction", "ConPad1") .and. oRpc:CallProc("AlwaysTrue") == .T.
+                MsgInfo("A conexão via RPC foi estabelecida", "TOTVS")
+                exit
+            else
+                MsgStop("A conexão foi estabelecida, mas as funções não está funcionamento corretamente no destino", "TOTVS")
+            endif
+
+            oRpc:Disconnect()
+        else
+            MsgStop("Não foi possível conectar no destino", "TOTVS")
+        endif
+
+        FreeObj(oRpc)
+
+        oRpc := nil
+    else
+        MsgStop("Dados inválidos, informe os dados de conexão RPC", "TOTVS")
+    endif
+enddo
+
+return
